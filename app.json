@@ -1,0 +1,36 @@
+{
+  "name": "ricardoroma.app",
+  "description": "ricardoroma.app",
+  "keywords": [
+    "productivity",
+    "HTML5"
+  ],
+  "website": "https://ricardoroma.app/",
+  "repository": "https://github.com/ricardovroma/ricardoroma.app",
+  "logo": "",
+  "success_url": "/",
+  "env": {
+    "SECRET_TOKEN": {
+      "description": "A secret key for verifying the integrity of signed cookies.",
+      "generator": "secret"
+    },
+    "WEB_CONCURRENCY": {
+      "description": "The number of processes to run.",
+      "value": "5"
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 2,
+      "size": "Performance-M"
+    }
+  },
+  "image": "heroku/php",
+  "addons": [
+    "openredis",
+    {
+      "plan": "mongolab:shared-single-small",
+      "as": "MONGO"
+    }
+  ]
+}
